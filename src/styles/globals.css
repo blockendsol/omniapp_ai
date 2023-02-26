@@ -38,6 +38,13 @@ body {
 		);
 	}
 
+	.text-glow {
+		background: linear-gradient(93.44deg, #fd72ff 10.42%, #3061b1 84.27%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
 	.box-grad {
 		background: linear-gradient(rgba(253, 114, 255, 1), rgba(48, 97, 177, 1));
 	}

@@ -22,7 +22,7 @@ export default function Hero() {
 							<span className=' text-[16px] font-ruberoid font-semibold leading-[23px]'>Join Our Telegram</span>
 						</button>
 
-						<button className='flex flex-row items-center py-4 px-6 text-white gap-[10px] rounded-lg border border-[transparent] hover:border-plain hover:text-plain'>
+						<button className='flex flex-row items-center py-4 px-6 text-white gap-[10px] rounded-lg border border-[transparent] hover:border-main hover:text-main'>
 							<Icon icon='ri-file-copy-2-line' className='text-xl' />{' '}
 							<span className=' text-[16px] font-ruberoid font-semibold leading-[23px]'>Read Whitepaper</span>
 						</button>

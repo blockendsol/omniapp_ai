@@ -12,7 +12,7 @@ export default function Features() {
 
 				<div className='max-w-[597px]'>
 					<h3 className='text-white text-[80px] leading-[80px] font-ruberoid font-extrabold mb-6'>
-						Our Products & Features
+						Our Products & <span className='text-glow'>Features</span>
 					</h3>
 
 					<p className='text-grey text-[21px] leading-[32px] font-inter font-light mb-10'>
@@ -44,7 +44,7 @@ export default function Features() {
 					</div>
 				</div>
 
-				<div className='relative w-[500px] h-[353px] py-[81px] pl-[172px] rounded-xl card-2'>
+				<div className='relative w-[500px] h-[393px] py-[81px] pl-[172px] rounded-xl card-2'>
 					<Image src={image_3} alt='card' className='absolute w-[215px] h-[200px]  left-0 bottom-0 rounded-bl-xl' />
 
 					<div className='relative max-w-[296px] flex flex-col items-start gap-4'>
@@ -58,7 +58,7 @@ export default function Features() {
 					</div>
 				</div>
 
-				<div className='relative w-[500px] h-[347px] py-[81px] pl-[50px] rounded-xl card-3'>
+				<div className='relative w-[500px] h-[393px] py-[81px] pl-[50px] rounded-xl card-3'>
 					<Image src={image_2} alt='card' className='absolute w-[215px] h-[200px]  left-[285px] top-0 rounded-tr-xl' />
 
 					<div className='relative max-w-[296px] flex flex-col items-start gap-4'>
@@ -71,8 +71,8 @@ export default function Features() {
 					</div>
 				</div>
 
-				<div className='relative w-[500px] h-[399ppx] py-[81px] pl-[172px] rounded-xl card-4'>
-					<Image src={image_4} alt='card' className='absolute w-[215px] h-[200px]  left-0 top-0 rounded-br-xl' />
+				<div className='relative w-[500px] h-[393px] py-[81px] pl-[172px] rounded-xl card-4'>
+					<Image src={image_4} alt='card' className='absolute w-[215px] h-[200px]  left-0 top-0 rounded-tl-xl' />
 					<div className='relative max-w-[296px] flex flex-col items-start gap-4'>
 						<h4 className='text-white text-[40px] leading-[44px] font-ruberoid font-extrabold'>OmniAI DAO</h4>
 

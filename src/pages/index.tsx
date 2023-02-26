@@ -8,6 +8,7 @@ import Hero from '@/components/Home/Hero';
 import OurTeam from '@/components/Home/OurTeam';
 import About from '@/components/Home/About';
 import Features from '@/components/Home/Features';
+import Tokenomics from '@/components/Home/Tokenomics';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,11 +23,10 @@ export default function Home() {
 			</Head>
 
 			<Hero />
-			{/* <div className=' relative'> */}
+
 			<About />
 			<Features />
-
-			{/* </div> */}
+			<Tokenomics />
 
 			<OurTeam />
 			{/* <main className={styles.main}>

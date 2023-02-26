@@ -3,7 +3,7 @@ export default function About() {
 		<section className='w-full h-full py-[163px] px-16 bg-black bg-opacity-50 backdrop-blur-[50px] backdrop-filter'>
 			<div className='flex justify-start gap-[35px]'>
 				<h1 className='max-w-[651px] text-white text-[80px] leading-[80px] font-ruberoid font-extrabold'>
-					A New Era For Blockchain
+					A New Era For <span className='text-glow'>Blockchain</span>
 				</h1>
 
 				<div className='text-white text-[21px] leading-[32px] font-inter font-normal max-w-[447px]'>
