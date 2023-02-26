@@ -39,7 +39,27 @@ body {
 	}
 
 	.box-grad {
-		background: linear-gradient(1px, rgba(253, 114, 255, 1) rgba(48, 97, 177, 1));
+		background: linear-gradient(rgba(253, 114, 255, 1), rgba(48, 97, 177, 1));
+	}
+
+	.section-bg {
+		background: 'rgba(10, 6, 30, 0.6)';
+	}
+
+	.card-1 {
+		background: linear-gradient(124.77deg, #01061e -6.15%, #1870c3 48.31%, #fd72ff 89.78%);
+	}
+
+	.card-2 {
+		background: linear-gradient(262.03deg, #01061e -3.76%, #1870c3 48.15%, #fd72ff 87.67%);
+	}
+
+	.card-3 {
+		background: linear-gradient(255.01deg, #fd72ff -5.85%, #1870c3 48.34%, #01061e 107.25%);
+	}
+
+	.card-4 {
+		background: linear-gradient(111.7deg, #fd72ff -0.47%, #1870c3 48.59%, #01061e 101.93%);
 	}
 }
 

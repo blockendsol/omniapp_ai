@@ -5,7 +5,7 @@ import Logo from './Logo';
 const ActiveLink = ({ href, title }: { href: string; title: string }) => {
 	const router = useRouter();
 
-	const path = router.asPath === href ? 'text-white' : 'text-main';
+	const path = router.asPath === href ? 'text-main' : 'text-white hover:text-main';
 
 	return (
 		<NavLink href={href} className={`${path} text-[16px] font-ruberoid font-semibold leading-[23px]`}>
@@ -21,13 +21,16 @@ export default function NavBar() {
 				<Logo />
 				<ul className='flex gap-10'>
 					<li>
-						<ActiveLink href='/home' title='About Us' />
+						<ActiveLink href='/' title='About Us' />
 					</li>
 					<li>
-						<ActiveLink href='/home' title='Products' />
+						<ActiveLink href='/products' title='Products' />
 					</li>
 					<li>
-						<ActiveLink href='/home' title='Whitepaper' />
+						<ActiveLink href='/whitepapper' title='Whitepaper' />
+					</li>
+					<li>
+						<ActiveLink href='/dashboard' title='Dashboard' />
 					</li>
 				</ul>
 				<button className='flex flex-row items-center py-4 px-[46px] gap-[10px] bg-main rounded-lg'>
