@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import coin from '/public/card/pebles-card.svg';
 import chart from '/public/card/chart.png';
+import coin_icon from '/public/card/bnb.svg';
 
 const SaleStats = ({ title, value }: { title: string; value: string }) => {
 	return (
@@ -13,7 +14,7 @@ const SaleStats = ({ title, value }: { title: string; value: string }) => {
 
 export default function SaleCard() {
 	return (
-		<div className='w-full h-[890px] bg-primary backdrop-blur-[50px] py-[62px] px-[40px] rounded-xl'>
+		<div className='w-full h-full bg-primary backdrop-blur-[50px] py-[62px] px-[40px] rounded-xl'>
 			<div className='w-full flex flex-row items-start gap-6 '>
 				<Image src={coin} alt='omp' className='w-[56px] h-[47px]' />
 				<div className='w-full'>
@@ -35,6 +36,52 @@ export default function SaleCard() {
 						<SaleStats title='Total Raised' value='40.190 BNB' />
 					</div>
 				</div>
+			</div>
+
+			<form action=''>
+				<div className='flex flex-col my-6 gap-4'>
+					<div className='relative'>
+						<label className='absolute pl-[33px] pt-[10px] pb-[5px] text-[#565656] text-[12px] leading-[18px] uppercase font-ruberoid font-normal'>
+							You pay
+						</label>
+						<input
+							type='number'
+							placeholder='0.00'
+							className='block w-full rounded-xl border border-grey bg-[#02121D] py-[20px] pl-[33px] pr-[40px] font-inter font-semibold text-[28px] leading-[34px] text-white focus:outline-none focus:border-main'
+						/>
+
+						<div className='absolute right-0 inset-y-[10px] pb-[20px] pr-[40px] text-white '>
+							<div className='flex flex-row items-center py-4 px-6 gap-[10px] border-2 border-main rounded-lg'>
+								<Image src={coin_icon} alt='bnb' className='w-4 h-4' />
+								<span className=' text-[12px] leading-[18px] font-ruberoid font-semibold'>BNB</span>
+							</div>
+						</div>
+					</div>
+					<span className='text-[#9C9C9C] text-[12px] leading-[15px] font-inter font-normal'>
+						Minimum Buy: 1 BNB - 25, 000 OMP
+					</span>
+					<div className='relative'>
+						<label className='absolute pl-[33px] pt-[10px] pb-[5px] text-[#565656] text-[12px] leading-[18px] uppercase font-ruberoid font-normal'>
+							You Receive
+						</label>
+						<input
+							type='number'
+							placeholder='0.00'
+							className='block w-full rounded-xl border border-grey bg-[#02121D] py-[20px] pl-[33px] pr-[40px] font-inter font-semibold text-[28px] leading-[34px] text-white placeholder:text-[#565656] focus:outline-none focus:border-main'
+						/>
+					</div>
+				</div>
+
+				<button className='w-full flex flex-row items-center justify-center py-4 px-[46px] gap-[10px] bg-main rounded-lg'>
+					<span className='text-text-dark text-[16px] font-ruberoid font-semibold leading-[23px]'>Connect Wallet</span>
+				</button>
+			</form>
+
+			<div className=' text-center text-[16px] leading-[23px] text-white font-ruberoid gap-4 mt-10'>
+				<p className=' font-normal'>Seed Round Ends 31st march</p>
+				<p className='font-extrabold'>
+					Presale on Pinksale starts 2nd April. Listing on Pancakeswap Immediately After Presale
+				</p>
 			</div>
 		</div>
 	);
