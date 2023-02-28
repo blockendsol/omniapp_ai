@@ -26,8 +26,8 @@ function Roadmap() {
               <RoadMapBox number="05" title="Initial Project researchand ideation" style="lg:col-start-5 lg:col-span-1" position="bulb-one -bottom-4 left-[100px]" />
               <RoadMapBox number="07" title="Initial Project researchand ideation" style="lg:col-start-7 lg:col-span-1" position="bulb-one -bottom-4 left-[100px]"/>
           </div>
-          <div className="w-full h-[100px]"></div>
-          <div className="grid w-full grid-row-1 grid-cols-1 lg:grid-cols-8">
+          <div className="w-full h-[80px]"></div>
+          <div className="grid w-full grid-row-1 grid-cols-8">
               <RoadMapBox number="02" title="Initial Project researchand ideation" style="col-start-2 col-span-1" position="bulb-two -top-5 left-[100px]" />
               <RoadMapBox number="04" title="Initial Project researchand ideation" style="col-start-4 col-span-1" position="bulb-two -top-5 left-[100px]"/>
               <RoadMapBox number="06" title="Initial Project researchand ideation" style="col-start-6 col-span-1" position="bulb-two -top-5 left-[100px]"/>

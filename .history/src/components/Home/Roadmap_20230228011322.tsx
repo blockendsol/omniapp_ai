@@ -21,16 +21,16 @@ function Roadmap() {
         </h1>
         <div className="w-full">
           <div className="grid w-full grid-rows-1 grid-cols-1 lg:grid-cols-8">
-              <RoadMapBox number="01" title="Initial Project researchand ideation" style="lg:col-start-1 lg:col-span-1" position="bulb-one -bottom-4 left-[100px]" />
-              <RoadMapBox number="03" title="Initial Project researchand ideation" style="lg:col-start-3 lg:col-span-1" position="bulb-one -bottom-4 left-[100px]"/>
-              <RoadMapBox number="05" title="Initial Project researchand ideation" style="lg:col-start-5 lg:col-span-1" position="bulb-one -bottom-4 left-[100px]" />
-              <RoadMapBox number="07" title="Initial Project researchand ideation" style="lg:col-start-7 lg:col-span-1" position="bulb-one -bottom-4 left-[100px]"/>
+              <RoadMapBox number="01" title="Initial Project researchand ideation" style="lg:col-start-1 lg:col-span-1" position="bulb-one -bottom-4 left-[50px]" />
+              <RoadMapBox number="03" title="Initial Project researchand ideation" style="col-start-3 col-span-1" position="bulb-one -bottom-4 left-[100px]"/>
+              <RoadMapBox number="05" title="Initial Project researchand ideation" style="col-start-5 col-span-1" position="bulb-one -bottom-4 left-[100px]" />
+              <RoadMapBox number="07" title="Initial Project researchand ideation" style="col-start-7 col-span-1" position="bulb-one -bottom-4 left-[100px]"/>
           </div>
-          <div className="w-full h-[100px]"></div>
-          <div className="grid w-full grid-row-1 grid-cols-1 lg:grid-cols-8">
+          <div className="w-full h-[80px]"></div>
+          <div className="grid w-full grid-row-1 cols-span-8">
               <RoadMapBox number="02" title="Initial Project researchand ideation" style="col-start-2 col-span-1" position="bulb-two -top-5 left-[100px]" />
               <RoadMapBox number="04" title="Initial Project researchand ideation" style="col-start-4 col-span-1" position="bulb-two -top-5 left-[100px]"/>
-              <RoadMapBox number="06" title="Initial Project researchand ideation" style="col-start-6 col-span-1" position="bulb-two -top-5 left-[100px]"/>
+              <RoadMapBox number="06" title="Initial Project researchand ideation" style="col-start-6 -ml-[50px] col-span-1" position="bulb-two -top-5 left-[100px]"/>
               
           </div>
         </div>
