@@ -2,9 +2,8 @@ import { useRouter } from 'next/router';
 import NavLink from '@/components/shared/NavLink';
 import Logo from './Logo';
 import Icon from '@/components/shared/Icon';
-import { confirmWalletConnection, connectWallet } from '@/context/cotract/methods';
+import { confirmWalletConnection } from '@/context/cotract/methods';
 import { useEffect, useState } from 'react';
-import { shortner } from 'utility/shortner';
 
 const ActiveLink = ({ href, title }: { href: string; title: string }) => {
 	const router = useRouter();
@@ -43,9 +42,9 @@ export default function NavBar() {
 							<ActiveLink href='/dashboard' title='Dashboard' />
 						</li>
 					</ul>
-					<button className='flex flex-row items-center py-4 px-[46px] gap-[10px] bg-main rounded-lg' onClick={()=> {connectWallet(setAccount)}}>
+					<button className='flex flex-row items-center py-4 px-[46px] gap-[10px] bg-main rounded-lg' onClick={()=> onClick={connectWallet(setAccount)}}>
 						<span className='text-text-dark text-[16px] font-ruberoid font-semibold leading-[23px]'>
-						{account ? shortner(account) : "Connect Wallet"}
+							Connect Wallet
 						</span>
 					</button>
 				</div>

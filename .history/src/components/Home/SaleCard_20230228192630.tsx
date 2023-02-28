@@ -90,8 +90,8 @@ export default function SaleCard() {
 							You Receive
 						</label>
 						<input
-							onChange={setTokenPrice}
-							value={token && token > 0 ? token : 0}	
+						onChange={setTokenPrice}
+						value={token && token > 0 ? token : 0}	
 							type='number'
 							placeholder='0.00'
 							className='block w-full rounded-xl border border-grey bg-[#02121D] py-[20px] pl-[33px] pr-[40px] font-inter font-semibold text-[28px] leading-[34px] text-white placeholder:text-[#565656] focus:outline-none focus:border-main'

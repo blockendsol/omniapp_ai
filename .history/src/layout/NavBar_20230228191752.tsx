@@ -4,7 +4,6 @@ import Logo from './Logo';
 import Icon from '@/components/shared/Icon';
 import { confirmWalletConnection, connectWallet } from '@/context/cotract/methods';
 import { useEffect, useState } from 'react';
-import { shortner } from 'utility/shortner';
 
 const ActiveLink = ({ href, title }: { href: string; title: string }) => {
 	const router = useRouter();

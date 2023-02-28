@@ -4,7 +4,6 @@ import Logo from './Logo';
 import Icon from '@/components/shared/Icon';
 import { confirmWalletConnection, connectWallet } from '@/context/cotract/methods';
 import { useEffect, useState } from 'react';
-import { shortner } from 'utility/shortner';
 
 const ActiveLink = ({ href, title }: { href: string; title: string }) => {
 	const router = useRouter();
@@ -46,6 +45,7 @@ export default function NavBar() {
 					<button className='flex flex-row items-center py-4 px-[46px] gap-[10px] bg-main rounded-lg' onClick={()=> {connectWallet(setAccount)}}>
 						<span className='text-text-dark text-[16px] font-ruberoid font-semibold leading-[23px]'>
 						{account ? shortner(account) : "Connect Wallet"}
+							
 						</span>
 					</button>
 				</div>

@@ -26,7 +26,6 @@ export default function Home() {
 			<About />
 			<Features />
 			<Tokenomics />
-			<Roadmap />
 			<OurTeam />
 		</>
 	);
