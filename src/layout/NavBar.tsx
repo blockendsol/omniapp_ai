@@ -43,7 +43,7 @@ export default function NavBar() {
 					</button>
 				</div>
 
-				<button className='text-white pr-[15px]'>
+				<button className='text-white pr-[15px] md:hidden'>
 					<Icon icon='ri-menu-5-fill' className='w-10 h-10' />
 				</button>
 			</div>
