@@ -12,9 +12,10 @@ export default function Dashboard() {
 			</Head>
 
 			<section className='relative w-full'>
-				<div className='absolute bg-[url("/section_svg/earth-globe.svg")]' />
+				{/* <div className='absolute bg-[url("/section_svg/earth-globe.svg")]' /> */}
+				<div className='absolute top-[-276px] bottom-0 bg-[url("/section_svg/landslide.svg")] bg-no-repeat w-full h-[1200px]' />
 
-				<div className='w-full flex flex-col gap-[128px] px-[19px] py-[148px] md:px-[176px] md:flex-row'>
+				<div className='relative w-full flex flex-col gap-[128px] px-[19px] py-[148px] md:px-[176px] md:flex-row'>
 					<div className='w-full max-w-[493px] flex flex-col items-center text-center md:items-start md:text-left'>
 						<h1 className='text-white text-[30px] leading-[33px] font-ruberoid font-extrabold mb-4 md:text-[80px] md:leading-[87px]'>
 							Omniapp Dashboard
