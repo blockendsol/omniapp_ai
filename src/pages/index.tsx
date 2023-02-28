@@ -23,11 +23,9 @@ export default function Home() {
 			</Head>
 
 			<Hero />
-
 			<About />
 			<Features />
 			<Tokenomics />
-
 			<OurTeam />
 			{/* <main className={styles.main}>
 				<div className={styles.description}>

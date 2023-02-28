@@ -16,6 +16,7 @@ module.exports = {
 				primary: 'rgba(1, 5, 24, 0.4)',
 				section: 'rgba(1, 5, 24, 0.85)',
 				light: 'rgba(10, 6, 30, 0.6)',
+				thick: 'rgba(1, 5, 24, 0.85)',
 			},
 		},
 	},

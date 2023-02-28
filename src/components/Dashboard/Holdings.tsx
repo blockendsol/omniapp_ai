@@ -13,7 +13,7 @@ const SaleStats = ({ title, value }: { title: string; value: string }) => {
 
 export default function Holdings() {
 	return (
-		<div className='w-full h-full bg-primary backdrop-blur-[50px] py-[62px] px-[49px] rounded-xl'>
+		<div className='w-full h-full bg-primary backdrop-blur-[50px] py-[62px] px-[28px] md:px-[49px] rounded-xl'>
 			<div className='w-full flex flex-row items-start gap-6'>
 				<Image src={coin} alt='omp' className='w-[56px] h-[47px]' />
 				<div className='w-full'>
@@ -26,7 +26,7 @@ export default function Holdings() {
 				</div>
 			</div>
 
-			<div className='w-full items-center gap-6 flex my-[48px]'>
+			<div className='w-full flex flex-col items-center gap-6 md:flex-row my-[48px]'>
 				<Image src={chart} alt='omp' className='w-[180px] h-[180px]' />
 
 				<div className='w-[191px] h-[140px] box-border p-[1px] rounded-xl box-grad'>

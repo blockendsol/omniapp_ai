@@ -21,13 +21,15 @@ const Distribution = ({ color, title, value }: { color: string; title: string; v
 
 export default function Tokenomics() {
 	return (
-		<section className='relative w-full h-full bg-section'>
-			<div className='absolute bg-[url("/section_svg/section-team.svg")] bg-no-repeat w-full h-full' />
+		<section className='relative w-full h-full bg-thick'>
+			{/* <div className='absolute bg-[url("/section_svg/section-team.svg")] bg-no-repeat w-full h-full' /> */}
 
-			<div className='w-full relative  pt-[100px] px-[156px]'>
-				<h1 className='text-glow text-[80px] leading-[80px] font-ruberoid font-extrabold mb-[56px]'>Tokenomics</h1>
+			<div className='w-full relative pt-[100px] px-[19px] md:px-[156px]'>
+				<h1 className='text-glow text-[36px] leading-[36px] font-ruberoid font-extrabold mb-[56px] md:text-[80px] md:leading-[80px]'>
+					Tokenomics
+				</h1>
 
-				<div className='w-full flex items-start flex-row gap-[48px] max-w-[768px] mb-[100px]'>
+				<div className='w-full flex items-start flex-col md:flex-row gap-[48px] max-w-[768px] mb-[100px]'>
 					<div className='w-full flex flex-col items-start gap-4'>
 						<DetailsCard title='Token Name' value='OmniAI App Token' />
 						<DetailsCard title='Ticker' value='OMP' />
@@ -38,13 +40,13 @@ export default function Tokenomics() {
 					</div>
 				</div>
 
-				<div className='w-full flex items-start flex-col gap-[81px] md:flex-row'>
+				<div className='w-full flex items-center md:items-start flex-col gap-[81px] md:flex-row'>
 					<Image src={stackCoin} alt='coin stack' className='w-[393px] h-[452px]' />
 
 					<div className='w-full'>
 						<h3 className='text-white text-[40px] leading-[40px] font-ruberoid font-extrabold'>Token Distribution</h3>
 
-						<div className='grid grid-cols-4 gap-[56px] mt-[64px]'>
+						<div className='grid grid-cols-2 md:grid-cols-4 gap-[56px] mt-[64px]'>
 							<Distribution color='text-main' title='Team' value='20%' />
 							<Distribution color='text-info' title='liquidity' value='15%' />
 							<Distribution color='text-main' title='Angel investors' value='5%' />
