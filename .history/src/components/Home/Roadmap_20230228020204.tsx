@@ -4,7 +4,7 @@ type IMap = { number: String, title: string, style:string, position: string};
 
 const RoadMapBox = ({ number, title, style, position }: IMap) => {
 return (
-  <div className={`roadmap-box relative w-[229px] flex flex-col -z-10 ${style}`}>
+  <div className={`roadmap-box relative w-[229*x] flex flex-col -z-10 ${style}`}>
   <p className="text-[#B7B3B3] text-[10px] font-inter font-[300]">{number}</p>
   <h2 className="font-[800] text-white text-[20px] font-ruberoid">{title}</h2>
   <div className={`${position} w-[30px] -z-20 h-[30px] absolute rounded-[50%]`} ></div>
