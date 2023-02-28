@@ -14,11 +14,11 @@ const SaleStats = ({ title, value }: { title: string; value: string }) => {
 
 export default function SaleCard() {
 	return (
-		<div className='w-full h-full bg-primary backdrop-blur-[50px] py-[62px] px-[40px] rounded-xl'>
-			<div className='w-full flex flex-row items-start gap-6 '>
+		<div className='w-full h-full bg-primary backdrop-blur-[50px] py-[34px] px-[28px] rounded-xl my:py-[62px] md:px-[40px]'>
+			<div className='w-full flex items-start gap-6 flex-row'>
 				<Image src={coin} alt='omp' className='w-[56px] h-[47px]' />
 				<div className='w-full'>
-					<h4 className='text-white font-ruberoid font-extrabold text-[25px] leading-[27px]'>
+					<h4 className='text-white text-[17px] leading-[21px] font-ruberoid font-extrabold md:text-[25px] md:leading-[27px]'>
 						Get up to 50% Bonous by Joining Our Seed Round
 					</h4>
 					<button className='flex flex-row items-center py-2 px-4 gap-[10px] border-2 border-main rounded-lg text-white text-[11px] leading-[13px] font-inter font-semibold mt-4'>
@@ -27,11 +27,11 @@ export default function SaleCard() {
 				</div>
 			</div>
 
-			<div className='w-full items-center gap-6 flex mt-[33px]'>
+			<div className='w-full items-center gap-6 flex flex-col mt-[33px] md:flex-row'>
 				<Image src={chart} alt='omp' className='w-[161px] h-[161px]' />
 
 				<div className='w-[266px] h-[84px] box-border p-[1px] rounded-xl box-grad'>
-					<div className='w-full h-full bg-primary backdrop-blur-[800px] flex flex-row items-start py-[22px] px-[10px] gap-4 rounded-xl'>
+					<div className='w-full h-full bg-primary backdrop-blur-[800px] flex flex-row items-center py-[22px] px-[10px] gap-4 rounded-xl md:items-start'>
 						<SaleStats title='Total Sold' value='81,458 OMP' />
 						<SaleStats title='Total Raised' value='40.190 BNB' />
 					</div>
