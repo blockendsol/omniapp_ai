@@ -5,6 +5,7 @@ import Icon from '@/components/shared/Icon';
 import { confirmWalletConnection, connectWallet } from '@/context/cotract/methods';
 import { useEffect, useState } from 'react';
 import { shortner } from 'utility/shortner';
+import ConnectWalletButton from './ConnectWalletButton';
 
 const ActiveLink = ({ href, title }: { href: string; title: string }) => {
 	const router = useRouter();
@@ -19,10 +20,25 @@ const ActiveLink = ({ href, title }: { href: string; title: string }) => {
 };
 
 export default function NavBar() {
-	const [account, setAccount] = useState<string>("");
+	const [isOpen, setIsOpen] = useState(false);
+	const [account, setAccount] = useState<string>('');
+
+	function openModal() {
+		setIsOpen(true);
+	}
+
+	function closeModal() {
+		setIsOpen(false);
+	}
+
 	useEffect(() => {
-	  confirmWalletConnection(setAccount);
+		confirmWalletConnection(setAccount);
 	}, [account]);
+
+	// {/* onClick={() => {
+	// 					connectWallet(setAccount); */}
+	// 				}}
+
 	return (
 		<nav className='sticky top-0 z-50 w-full h-[100px] py-[33px] px-[15px] bg-primary backdrop-blur-[52px] backdrop-filter md:py-[18px]  md:px-16'>
 			<div className='flex items-center justify-between'>
@@ -43,17 +59,33 @@ export default function NavBar() {
 							<ActiveLink href='/dashboard' title='Dashboard' />
 						</li>
 					</ul>
-					<button className='flex flex-row items-center py-4 px-[46px] gap-[10px] bg-main rounded-lg' onClick={()=> {connectWallet(setAccount)}}>
-						<span className='text-text-dark text-[16px] font-ruberoid font-semibold leading-[23px]'>
-						{account ? shortner(account) : "Connect Wallet"}
-						</span>
-					</button>
+					{account ? (
+						<button
+							className='flex flex-row items-center py-4 px-[46px] gap-[10px] border border-main rounded-lg'
+							onClick={openModal}
+						>
+							<span className='text-white text-[16px] font-ruberoid font-semibold leading-[23px]'>
+								{shortner(account)}
+							</span>
+						</button>
+					) : (
+						<button
+							className='flex flex-row items-center py-4 px-[46px] gap-[10px] bg-main rounded-lg'
+							onClick={openModal}
+						>
+							<span className='text-text-dark text-[16px] font-ruberoid font-semibold leading-[23px]'>
+								Connect Wallet
+							</span>
+						</button>
+					)}
 				</div>
 
-				<button className='text-white pr-[15px] md:hidden' >
+				<button className='text-white pr-[15px] md:hidden'>
 					<Icon icon='ri-menu-5-fill' className='w-10 h-10' />
 				</button>
 			</div>
+
+			<ConnectWalletButton isOpen={isOpen} closeModal={closeModal} setConneted={connectWallet(setAccount)} />
 		</nav>
 	);
 }

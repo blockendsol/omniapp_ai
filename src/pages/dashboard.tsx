@@ -1,7 +1,29 @@
 import Holdings from '@/components/Dashboard/Holdings';
+import { confirmWalletConnection, connectWallet } from '@/context/cotract/methods';
+import ConnectWalletButton from '@/layout/ConnectWalletButton';
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
 
 export default function Dashboard() {
+	const [isOpen, setIsOpen] = useState(false);
+	const [account, setAccount] = useState<string>('');
+
+	function openModal() {
+		setIsOpen(true);
+	}
+
+	function closeModal() {
+		setIsOpen(false);
+	}
+
+	const disConenct = () => {
+		setAccount('');
+	};
+
+	useEffect(() => {
+		confirmWalletConnection(setAccount);
+	}, [account]);
+
 	return (
 		<>
 			<Head>
@@ -22,24 +44,35 @@ export default function Dashboard() {
 						</h1>
 
 						<p className='text-white text-[18px] leading-[26px] font-ruberoid font-normal mb-4 md:text-[32px] md:leading-[47px]'>
-							\{' '}
+							{account ? 'Welcome to your omniapp dashboard' : 'Connect your wallet to check your holdings.'}
 						</p>
 
 						<p className='text-white text-[14px] leading-[17px] font-inter font-bold md:text-[22px] md:leading-[27px]'>
 							Note: $OMP tokens will be avaliable for claim once presale has finished.
 						</p>
 						<div className='w-ful flex items-center mt-[56px]'>
-							<button className='flex flex-row items-center justify-center py-4 px-[46px] gap-[10px] bg-plain rounded-lg'>
-								<span className='text-white hover:text-main text-[16px] font-ruberoid font-semibold leading-[23px]'>
+							{account ? (
+								<button
+									className='flex flex-row items-center justify-center py-4 px-[46px] gap-[10px] bg-plain rounded-lg text-white hover:text-main text-[16px] font-ruberoid font-semibold leading-[23px]'
+									onClick={disConenct}
+								>
+									Disconnect Wallet
+								</button>
+							) : (
+								<button
+									className='flex flex-row items-center justify-center py-4 px-[46px] gap-[10px] bg-plain rounded-lg text-white hover:text-main text-[16px] font-ruberoid font-semibold leading-[23px]'
+									onClick={openModal}
+								>
 									Connect Wallet
-								</span>
-							</button>
+								</button>
+							)}
 						</div>
 					</div>
 					<div className='w-full max-w-[585px]'>
 						<Holdings />
 					</div>
 				</div>
+				<ConnectWalletButton isOpen={isOpen} closeModal={closeModal} setConneted={connectWallet(setAccount)} />
 			</section>
 		</>
 	);
