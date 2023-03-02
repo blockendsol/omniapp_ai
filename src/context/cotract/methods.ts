@@ -44,7 +44,7 @@ export const confirmWalletConnection = async (setAccount: React.Dispatch<React.S
 };
 
 export const contractInstance = async () => {
-	const { ethereum } = window;
+	const { ethereum }: any = window;
 	const provider = await new ethers.providers.Web3Provider(ethereum);
 	console.log(provider);
 	const signer = await provider.getSigner();
