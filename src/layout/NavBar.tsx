@@ -85,7 +85,7 @@ export default function NavBar() {
 				</button>
 			</div>
 
-			<ConnectWalletButton isOpen={isOpen} closeModal={closeModal} setConneted={connectWallet(setAccount)} />
+			<ConnectWalletButton isOpen={isOpen} closeModal={closeModal} setConneted={() => connectWallet(setAccount)} />
 		</nav>
 	);
 }
