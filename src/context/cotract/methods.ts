@@ -16,7 +16,7 @@ export const connectWallet = async (setAccount: React.Dispatch<React.SetStateAct
 			toast.error('Pls Install Metamask');
 			return;
 		}
-		const accounts = await ethereum.request({
+		const accounts: any = await ethereum.request({
 			method: 'eth_requestAccounts',
 		});
 		setAccount(accounts[0]);
@@ -32,7 +32,7 @@ export const confirmWalletConnection = async (setAccount: React.Dispatch<React.S
 			toast.error('Pls Install Metamask');
 			return;
 		}
-		const accounts = await ethereum.request({
+		const accounts: any = await ethereum.request({
 			method: 'eth_requestAccounts',
 		});
 		if (accounts.length > 0) {
