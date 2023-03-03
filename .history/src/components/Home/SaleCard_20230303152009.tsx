@@ -19,10 +19,17 @@ export default function SaleCard() {
 	const [token, setToken] = useState(0);
 
 	// Conversion calculation
+<<<<<<< HEAD
+	const setTokenPrice = (e:React.ChangeEvent<HTMLInputElement>) => {
+	  const value = parseInt(e.target.value);
+	  setBNB(Number(value * 0.0004).toFixed(4) as any);
+	  setToken(value);
+=======
 	const setTokenPrice = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const value = parseInt(e.target.value);
 		setBNB(Number(value * 0.0004).toFixed(4) as any);
 		setToken(value);
+>>>>>>> 0db51001071b7d1c45c159d531f457050c57a52b
 	};
 
 	// Conversion calculation
