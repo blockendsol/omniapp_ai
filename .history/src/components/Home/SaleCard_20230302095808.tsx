@@ -32,7 +32,7 @@ export default function SaleCard() {
 	  setToken(2500 * value);
 	};
   
-	const handleSubmit = (e:React.SyntheticEvent) => {
+	const handleSubmit = (e) => {
 	  e.preventDefault();
 	  BuyNow(token.toString(), bnb.toString());
 	};
@@ -61,7 +61,7 @@ export default function SaleCard() {
 				</div>
 			</div>
 
-			<form onSubmit={handleSubmit}>
+			<form action=''>
 				<div className='flex flex-col my-6 gap-4'>
 					<div className='relative'>
 						<label className='absolute pl-[33px] pt-[10px] pb-[5px] text-[#565656] text-[12px] leading-[18px] uppercase font-ruberoid font-normal'>

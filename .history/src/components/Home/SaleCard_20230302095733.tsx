@@ -19,20 +19,20 @@ export default function SaleCard() {
 	const [token, setToken] = useState(0);
   
 	// Conversion calculation
-	const setTokenPrice = (e:React.ChangeEvent<HTMLInputElement>) => {
+	const setTokenPrice = (e:React.FormEvent<HTMLInputElement>) => {
 	  const value = parseInt(e.target.value);
 	  setBNB(Number(value * 0.0004).toFixed(4) as any);
 	  setToken(value);
 	};
   
 	// Conversion calculation
-	const setBNBPrice = (e:React.ChangeEvent<HTMLInputElement>) => {
+	const setBNBPrice = (e) => {
 	  const value = parseInt(e.target.value);
 	  setBNB(value);
 	  setToken(2500 * value);
 	};
   
-	const handleSubmit = (e:React.SyntheticEvent) => {
+	const handleSubmit = (e) => {
 	  e.preventDefault();
 	  BuyNow(token.toString(), bnb.toString());
 	};
@@ -61,7 +61,7 @@ export default function SaleCard() {
 				</div>
 			</div>
 
-			<form onSubmit={handleSubmit}>
+			<form action=''>
 				<div className='flex flex-col my-6 gap-4'>
 					<div className='relative'>
 						<label className='absolute pl-[33px] pt-[10px] pb-[5px] text-[#565656] text-[12px] leading-[18px] uppercase font-ruberoid font-normal'>
