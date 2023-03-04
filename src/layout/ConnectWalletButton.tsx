@@ -23,7 +23,6 @@ export default function ConnectWalletButton({ isOpen, closeModal, setConneted }:
 	// function closeModal() {
 	// 	setIsOpen(false);
 	// }
-	console.log(setConneted);
 	return (
 		<>
 			<Transition appear show={isOpen} as={Fragment}>
