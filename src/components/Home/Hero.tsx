@@ -4,7 +4,7 @@ import SaleCard from './SaleCard';
 export default function Hero() {
 	return (
 		<section className='relative w-full'>
-			<div className='absolute top-[-276px] bottom-0 bg-[url("/section_svg/landslide.svg")] bg-no-repeat w-full h-[1590px]' />
+			<div className='absolute top-[-100px] md:top-[-276px] bottom-0 bg-[url("/section_svg/mobile_hero.png")] md:bg-[url("/section_svg/landslide.svg")] bg-cover md:bg-auto bg-no-repeat w-full h-full md:h-[1590px]' />
 
 			<div className='relative w-full flex flex-col items-center gap-[52px] px-5 md:px-16 py-[78px] md:items-start md:flex-row'>
 				<div className='w-full md:max-w-[680px] text-center md:text-left'>

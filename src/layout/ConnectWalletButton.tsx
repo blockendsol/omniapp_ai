@@ -15,15 +15,6 @@ type ModalProps = {
 };
 
 export default function ConnectWalletButton({ isOpen, closeModal, setConneted }: ModalProps) {
-	// function handleConnect() {
-	// 	setIsOpen(false);
-	// 	setConneted(true);
-	// }
-
-	// function closeModal() {
-	// 	setIsOpen(false);
-	// }
-
 	return (
 		<>
 			<Transition appear show={isOpen} as={Fragment}>
