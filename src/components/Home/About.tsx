@@ -1,7 +1,7 @@
 export default function About() {
 	return (
 		<section className='w-full h-full  bg-black bg-opacity-50 backdrop-blur-[50px] backdrop-filter '>
-			<div className='absolute bg-[url("/section_svg/about-section.png")] bg-no-repeat w-full h-full' />
+			<div className='absolute bg-[url("/section_svg/mobile_about.png")] md:bg-[url("/section_svg/about-section.png")] bg-cover bg-no-repeat w-full h-full' />
 			<div className='relative w-full h-full py-[100px] px-[19px] md:py-[163px] md:px-16'>
 				<div className='flex flex-col justify-start gap-[35px] md:flex-row'>
 					<h1 className='max-w-[651px] text-white text-[36px] leading-[36px] font-ruberoid font-extrabold md:text-[80px] md:leading-[80px]'>

@@ -33,7 +33,7 @@ export const connectWallet = async (
       toast.error("Pls Install Metamask");
       return;
     }
-    const accounts = (await ethereum.request({
+    const accounts: any = (await ethereum.request({
       method: "eth_requestAccounts",
     })) as string[];
     setAccount(accounts[0]);
@@ -52,7 +52,7 @@ export const confirmWalletConnection = async (
       toast.error("Pls Install Metamask");
       return;
     }
-    const accounts = (await ethereum.request({
+    const accounts: any = (await ethereum.request({
       method: "eth_accounts",
     })) as string[];
     if (accounts?.length > 0) {

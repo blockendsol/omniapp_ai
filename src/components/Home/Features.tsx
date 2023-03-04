@@ -25,15 +25,15 @@ export default function Features() {
 				</div>
 			</div>
 
-			<div className='w-full grid-cols-1 grid md:grid-cols-2 gap-4 py-[100px]'>
-				<div className='relative w-[343px] md:w-[500px] h-[393px] py-[114px] pl-[50px] rounded-xl card-1'>
+			<div className='w-full grid-cols-1 grid md:grid-cols-2 gap-4 py-[50px] md:py-[100px] px-0'>
+				<div className='relative w-full md:w-[500px] h-[302px] md:h-[393px] py-[114px] px-2 md:pl-[50px] rounded-xl card-1'>
 					<Image
 						src={image_1}
 						alt='card'
 						className='hidden md:block absolute w-[215px] h-[200px]  left-[285px] bottom-0 rounded-br-xl'
 					/>
 
-					<div className='relative max-w-[296px] flex flex-col items-start gap-4'>
+					<div className='relative w-full md:max-w-[296px] flex flex-col items-start gap-4'>
 						<h4 className='text-white text-[30px] leading-[33px] md:text-[40px] md:leading-[44px] font-ruberoid font-extrabold'>
 							OmniAI Bot
 						</h4>
@@ -45,14 +45,14 @@ export default function Features() {
 					</div>
 				</div>
 
-				<div className='relative w-[343px] md:w-[500px] h-[393px] py-[81px] pl-[172px] rounded-xl card-2'>
+				<div className='relative w-full md:w-[500px] h-[302px] md:h-[393px] py-[81px] px-2 md:pl-[172px] rounded-xl card-2'>
 					<Image
 						src={image_3}
 						alt='card'
 						className='hidden md:block absolute w-[215px] h-[200px]  left-0 bottom-0 rounded-bl-xl'
 					/>
 
-					<div className='relative max-w-[296px] flex flex-col items-start gap-4'>
+					<div className='relative w-full md:max-w-[296px] flex flex-col items-start gap-4'>
 						<h4 className='text-white text-[30px] leading-[33px] md:text-[40px] md:leading-[44px] font-ruberoid font-extrabold'>
 							OmniAI App
 						</h4>
@@ -65,14 +65,14 @@ export default function Features() {
 					</div>
 				</div>
 
-				<div className='relative w-[343px] md:w-[500px] h-[393px] py-[81px] pl-[50px] rounded-xl card-3'>
+				<div className='relative w-full md:w-[500px] h-[302px] md:h-[393px] py-[81px] px-2 md:pl-[50px] rounded-xl card-3'>
 					<Image
 						src={image_2}
 						alt='card'
 						className='hidden md:block absolute w-[215px] h-[200px]  left-[285px] top-0 rounded-tr-xl'
 					/>
 
-					<div className='relative max-w-[296px] flex flex-col items-start gap-4'>
+					<div className='relative w-full md:max-w-[296px] flex flex-col items-start gap-4'>
 						<h4 className='text-white text-[30px] leading-[33px] md:text-[40px] md:leading-[44px] font-ruberoid font-extrabold'>
 							OmniAI Predict
 						</h4>
@@ -84,13 +84,13 @@ export default function Features() {
 					</div>
 				</div>
 
-				<div className='relative w-[343px] md:w-[500px] h-[393px] py-[81px] pl-[172px] rounded-xl card-4'>
+				<div className='relative w-full md:w-[500px] h-[302px] md:h-[393px] py-[81px] px-2 md:pl-[172px] rounded-xl card-4'>
 					<Image
 						src={image_4}
 						alt='card'
 						className='hidden md:block absolute w-[215px] h-[200px]  left-0 top-0 rounded-tl-xl'
 					/>
-					<div className='relative max-w-[296px] flex flex-col items-start gap-4'>
+					<div className='relative w-full md:max-w-[296px] flex flex-col items-start gap-4'>
 						<h4 className='text-white text-[30px] leading-[33px] md:text-[40px] md:leading-[44px] font-ruberoid font-extrabold'>
 							OmniAI DAO
 						</h4>

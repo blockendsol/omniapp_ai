@@ -6,10 +6,10 @@ import Icon from '@/components/shared/Icon';
 
 export default function Footer() {
 	return (
-		<div className='relative w-full h-[628px] md:h-[487px]'>
-			<div className='absolute bg-[url("/section_svg/footer.svg")] bg-center bg-no-repeat w-full h-[628px] md:h-full' />
+		<div className='relative w-full h-full md:h-[487px]'>
+			<div className='absolute bg-[url("/section_svg/mobile_footer.png")] md:bg-[url("/section_svg/footer.svg")] bg-cover bg-no-repeat w-full h-[628px] md:h-full' />
 
-			<div className='relative w-full px-[21px] md:px-[100px] py-[100px] md:pb-0 md:pt-[80px]'>
+			<div className='relative w-full px-[21px] md:px-[100px] pt-[50px] md:pb-0 md:pt-[80px]'>
 				<div className='w-full flex flex-col items-start md:items-center justify-between md:flex-row'>
 					<div className='w-full flex flex-col items-start justify-start md:max-w-[462px] pb-10 md:pb-0'>
 						<Image src={logo} alt='logo' className='w-[150px] h-[42px] md:w-[204px] md:h-[50px]' />
