@@ -15,6 +15,14 @@ type ModalProps = {
 };
 
 export default function ConnectWalletButton({ isOpen, closeModal, setConneted }: ModalProps) {
+	// function handleConnect() {
+	// 	setIsOpen(false);
+	// 	setConneted(true);
+	// }
+
+	// function closeModal() {
+	// 	setIsOpen(false);
+	// }
 	return (
 		<>
 			<Transition appear show={isOpen} as={Fragment}>
@@ -35,11 +43,6 @@ export default function ConnectWalletButton({ isOpen, closeModal, setConneted }:
 						>
 							<Dialog.Overlay className='fixed inset-0' />
 						</Transition.Child>
-
-						{/* This element is to trick the browser into centering the modal contents. */}
-						{/* <span className='inline-block h-screen align-middle' aria-hidden='true'>
-							&#8203;
-						</span> */}
 						<Transition.Child
 							as={Fragment}
 							enter='ease-out duration-300'

@@ -4,6 +4,8 @@ import chart from '/public/card/chart.png';
 import coin_icon from '/public/card/bnb.svg';
 import { useState } from 'react';
 import { BuyNow } from '@/context/cotract/methods';
+import { useContractHook } from '@/context/cotract/reducer';
+import { toast } from 'react-toastify';
 
 const SaleStats = ({ title, value }: { title: string; value: string }) => {
 	return (
@@ -15,8 +17,10 @@ const SaleStats = ({ title, value }: { title: string; value: string }) => {
 };
 
 export default function SaleCard() {
-	const [bnb, setBNB] = useState(0);
-	const [token, setToken] = useState(0);
+	const [bnb, setBNB] = useState<number | null >(null);
+	const [token, setToken] = useState<number | null>(null);
+	const [loading, setLoading] = useState<boolean | null>(false);
+	const {account} = useContractHook();
 
 	// Conversion calculation
 	const setTokenPrice = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,10 +36,13 @@ export default function SaleCard() {
 		setToken(2500 * value);
 	};
 
+
 	const handleSubmit = (e: React.SyntheticEvent) => {
 		e.preventDefault();
-		BuyNow(token.toString(), bnb.toString());
+		if(!account) toast.error('Coonect your wallet')
+		BuyNow((token as number).toString(), (bnb as number).toString(), setLoading);
 	};
+
 	return (
 		<div className='w-full h-full bg-primary backdrop-blur-[50px] py-[34px] px-[28px] rounded-xl my:py-[62px] md:px-[40px]'>
 			<div className='w-full flex items-start gap-6 flex-row'>
@@ -61,18 +68,19 @@ export default function SaleCard() {
 				</div>
 			</div>
 
-			<form action=''>
+			<form onSubmit={handleSubmit}>
 				<div className='flex flex-col my-6 gap-4'>
 					<div className='relative'>
 						<label className='absolute pl-[33px] pt-[10px] pb-[5px] text-[#565656] text-[12px] leading-[18px] uppercase font-ruberoid font-normal'>
 							You pay
 						</label>
 						<input
-							value={bnb && bnb > 0 ? bnb : 0}
+							value={bnb && bnb > 0 ? bnb : ''}
 							onChange={setBNBPrice}
 							type='number'
 							placeholder='0.00'
 							className='block w-full rounded-xl border border-grey bg-[#02121D] py-[20px] pl-[33px] pr-[40px] font-inter font-semibold text-[28px] leading-[34px] text-white focus:outline-none focus:border-main'
+							required
 						/>
 
 						<div className='absolute right-0 inset-y-[10px] pb-[20px] pr-[40px] text-white '>
@@ -91,16 +99,17 @@ export default function SaleCard() {
 						</label>
 						<input
 							onChange={setTokenPrice}
-							value={token && token > 0 ? token : 0}
+							value={token && token > 0 ? token : ''}
 							type='number'
 							placeholder='0.00'
-							className='block w-full rounded-xl border border-grey bg-[#02121D] py-[20px] pl-[33px] pr-[40px] font-inter font-semibold text-[28px] leading-[34px] text-white placeholder:text-[#565656] focus:outline-none focus:border-main'
+							className='block w-full rounded-xl border overflow-hidden border-grey bg-[#02121D] py-[20px] pl-[33px] pr-[40px] font-inter font-semibold text-[28px] leading-[34px] text-white placeholder:text-[#565656] focus:outline-none focus:border-main'
+							required
 						/>
 					</div>
 				</div>
 
 				<button className='w-full flex flex-row items-center justify-center py-4 px-[46px] gap-[10px] bg-main rounded-lg'>
-					<span className='text-text-dark text-[16px] font-ruberoid font-semibold leading-[23px]'>Connect Wallet</span>
+					<span className='text-text-dark text-[16px] font-ruberoid font-semibold leading-[23px]'>{loading ? "Processing..." : "Buy Now"}</span>
 				</button>
 			</form>
 

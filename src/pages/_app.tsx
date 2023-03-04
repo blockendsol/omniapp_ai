@@ -1,22 +1,31 @@
+import ContractProvider from '@/context/cotract/reducer';
 import Footer from '@/layout/Footer';
 import NavBar from '@/layout/NavBar';
+import "react-toastify/dist/ReactToastify.min.css";
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
-// import { Inter } from 'next/font/google';
-
-// const inter = Inter({
-// 	weight: ['100', '200', '300', '400', '500', '600', '800', '900'],
-// 	subsets: ['latin'],
-// });
+import { ToastContainer } from 'react-toastify';
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
+	<ContractProvider>
+	<ToastContainer
+      position="bottom-right"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="light"
+    />
 		<main className='relative'>
-			{/* <div className='absolute left-[941px] top-[-86px] right-[5.24%] h-[491px] w-full bg-[url("/section_svg/earth-globe.svg")] bg-no-repeat' /> */}
-			{/* <div className='absolute w-full bg-[url("/section_svg/landslide.png")] bg-no-repeat' /> */}
 			<NavBar />
 			<Component {...pageProps} />
 			<Footer />
 		</main>
+	</ContractProvider>
 	);
 }

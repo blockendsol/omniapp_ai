@@ -1,11 +1,13 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useRouter } from 'next/router';
 import NavLink from '@/components/shared/NavLink';
 import Logo from './Logo';
 import Icon from '@/components/shared/Icon';
-import { confirmWalletConnection, connectWallet } from '@/context/cotract/methods';
+import { confirmWalletConnection, connectWallet, disConnect } from '@/context/cotract/methods';
 import { useEffect, useState } from 'react';
 import { shortner } from 'utility/shortner';
 import ConnectWalletButton from './ConnectWalletButton';
+import { useContractHook } from '@/context/cotract/reducer';
 
 const ActiveLink = ({ href, title }: { href: string; title: string }) => {
 	const router = useRouter();
@@ -23,37 +25,38 @@ export default function NavBar() {
 	const { events } = useRouter();
 	const [showMobileNav, setShowNobileNav] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
-	const [account, setAccount] = useState<string>('');
+	const { account, setAccount } = useContractHook();
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	function openMobileMav() {
-		setShowNobileNav(!showMobileNav);
+		setShowNobileNav(true);
+	}
+
+	function closeMobileMav() {
+		setShowNobileNav(false);
 	}
 
 	function openModal() {
-		setIsOpen(true);
+		setIsOpen(!isOpen);
 	}
 
 	function closeModal() {
 		setIsOpen(false);
 	}
 
+	// set mobile nav to close on any route change
 	useEffect(() => {
 		// subscribe to next/router event
-		events.on('routeChangeStart', openMobileMav);
+		events.on('routeChangeStart', closeMobileMav);
 		return () => {
 			// unsubscribe to event on unmount to prevent memory leak
-			events.off('routeChangeStart', openMobileMav);
+			events.off('routeChangeStart', closeMobileMav);
 		};
-	}, [openMobileMav, events]);
+	}, [closeMobileMav, events]);
 
 	useEffect(() => {
 		confirmWalletConnection(setAccount);
 	}, [account]);
-
-	// {/* onClick={() => {
-	// 					connectWallet(setAccount); */}
-	// 				}}
 
 	return (
 		<nav className='sticky top-0 z-50 w-full  bg-primary backdrop-blur-[52px] backdrop-filter'>
@@ -107,7 +110,7 @@ export default function NavBar() {
 				<div className='fixed inset-0 z-50 bg-primary bg-opacity-50 backdrop-blur-[20px] backdrop-filter '>
 					<div className='relative bg-section  w-full h-[466px]  flex flex-col pb-8 gap-6'>
 						<div className='flex items-end justify-end py-[33px] px-[15px]'>
-							<button className='text-white text-4xl hover:text-main' onClick={openMobileMav}>
+							<button className='text-white text-4xl hover:text-main' onClick={closeMobileMav}>
 								<Icon icon='ri-close-fill' />
 							</button>
 						</div>
@@ -150,7 +153,32 @@ export default function NavBar() {
 				</div>
 			) : null}
 
-			<ConnectWalletButton isOpen={isOpen} closeModal={closeModal} setConneted={() => connectWallet(setAccount)} />
+			<Disconnect account={account} isOpen={isOpen && account.length > 0} />
+			<ConnectWalletButton
+				isOpen={isOpen && !account}
+				closeModal={closeModal}
+				setConneted={() => connectWallet(setAccount)}
+			/>
 		</nav>
 	);
 }
+
+const Disconnect = ({ account, isOpen }: { account: string; isOpen: boolean }) => {
+	return (
+		<div
+			className={`absolute right-14 py-1 justify-center mt-3 w-[200px] bg-main rounded-lg items-center ${
+				isOpen ? 'flex' : 'hidden'
+			} flex-col`}
+		>
+			<button className='py-1 cursor-pointer justify-center w-full flex items-center'>
+				<span className='hover:font-bold mr-1 font-semibold'>{shortner(account)}</span>
+				<i className='ri-file-copy-line'></i>
+			</button>
+			<button className='py-1 cursor-pointer w-full flex justify-center items-center'>
+				{' '}
+				<span className='hover:font-bold mr-1 font-semibold'>Disconnect</span>
+				<i className='ri-logout-circle-r-line'></i>
+			</button>
+		</div>
+	);
+};
