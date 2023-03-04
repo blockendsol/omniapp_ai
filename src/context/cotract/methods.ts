@@ -77,21 +77,28 @@ export const contractInstance = async () => {
   return contract;
 };
 
-export const startPurchase = async (time_in_minutes: number) => {
+export const startPurchase = async (
+  time_in_minutes: number,
+  setLoading: any
+) => {
   try {
+    setLoading(true);
     const contract = await contractInstance();
     await contract.callStatic.startPurchase(time_in_minutes);
     const res = await contract.startPurchase(time_in_minutes);
     await res.wait();
     toast.success("Purchase started successfully");
+    setLoading(false);
   } catch (err: any) {
     if (err && err?.data) {
       console.log(err?.data);
       const code = err.data?.replace("Reverted ", "");
       let reason = ethers.utils.toUtf8String("0x" + code.substr(138));
       toast.error(reason);
+      setLoading(false);
     } else if (err && err.code === 4001) {
       toast.error("user cancelled transaction");
+      setLoading(false);
     }
   }
 };
@@ -99,7 +106,9 @@ export const startPurchase = async (time_in_minutes: number) => {
 export const BuyNow = async (
   _amount: string,
   price: string,
-  setLoading: any
+  setLoading: any,
+  setBNB: any,
+  setToken: any
 ) => {
   try {
     setLoading(true);
@@ -112,10 +121,16 @@ export const BuyNow = async (
     await res.wait();
     toast.success("Purchased successfully");
     setLoading(false);
+    setBNB("");
+    setToken("");
   } catch (err: any) {
     if (err && err?.data) {
       const code = err.data?.replace("Reverted ", "");
       let reason = ethers.utils.toUtf8String("0x" + code.substr(138));
+      if (!reason) {
+        setLoading(false);
+        return toast.error("insufficient funds");
+      }
       toast.error(reason);
       setLoading(false);
     } else if (err && err.code === 4001) {
