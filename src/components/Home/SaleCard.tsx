@@ -40,7 +40,7 @@ export default function SaleCard() {
 	const handleSubmit = (e: React.SyntheticEvent) => {
 		e.preventDefault();
 		if(!account) toast.error('Coonect your wallet')
-		BuyNow((token as number).toString(), (bnb as number).toString(), setLoading);
+		BuyNow((token as number).toString(), (bnb as number).toString(), setLoading, setBNB, setToken);
 	};
 
 	return (

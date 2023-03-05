@@ -5,7 +5,7 @@ interface IProps {
     setAccount?: (account: string) => void
 }
 
-const initialState:IProps = {
+const initialState = {
     account: '',
 }
 
@@ -14,9 +14,18 @@ const ContractContext = createContext<any | null>(initialState);
 
 function ContractProvider({children}:{children: ReactNode}) {
 	const [account, setAccount] = useState<string>('');
+  const [show, setShow] = useState<boolean>(false);
+
+  const close = () => {
+    setShow(false);
+  }
+
+  const toggle = () => {
+    setShow(!show)
+  }
 
   return (
-    <ContractContext.Provider value={{account, setAccount}}>
+    <ContractContext.Provider value={{account, setAccount, show, toggle, close}}>
         {children}
     </ContractContext.Provider>
   )
