@@ -32,7 +32,7 @@ const TeamCard = ({ image, name, role, link }: TeamCardProps) => {
 export default function OurTeam() {
 	return (
 		<section className='relative w-full h-full bg-section'>
-			<div className='absolute bg-[url("/section_svg/section-team.svg")] bg-no-repeat w-full h-full' />
+			<div className='absolute bg-[url("/section_svg/mobile_tokenomics.png")] md:bg-[url("/section_svg/section-team.svg")] bg-cover md:bg-auto bg-no-repeat w-full h-full' />
 			<div className='relative w-full h-full pt-[120px] pb-[100px] px-[18px] md:px-16'>
 				<div className='flex flex-col items-start gap-6 max-w-[601px]'>
 					<h2 className='text-white text-[36px] leading-[36px] font-ruberoid font-extrabold md:text-[80px] md:leading-[80px]'>

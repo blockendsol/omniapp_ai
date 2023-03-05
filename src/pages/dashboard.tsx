@@ -33,11 +33,11 @@ export default function Dashboard() {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<section className='relative w-full'>
+			<section className='relative w-full h-full'>
 				{/* <div className='absolute bg-[url("/section_svg/earth-globe.svg")]' /> */}
-				<div className='absolute top-[-276px] bottom-0 bg-[url("/section_svg/landslide.svg")] bg-no-repeat w-full h-[1200px]' />
+				<div className='absolute top-[-70px] md:top-[-276px] bottom-0 bg-[url("/section_svg/mobile_dashboard.png")]  md:bg-[url("/section_svg/landslide.svg")] bg-cover md:bg-auto bg-no-repeat w-full h-full md:h-[1200px]' />
 
-				<div className='relative w-full flex flex-col gap-[128px] px-[19px] py-[148px] md:px-[176px] md:flex-row'>
+				<div className='relative w-full h-full flex flex-col gap-[128px] px-[19px] py-[100px] md:py-[148px] md:px-[176px] md:flex-row'>
 					<div className='w-full max-w-[493px] flex flex-col items-center text-center md:items-start md:text-left'>
 						<h1 className='text-white text-[30px] leading-[33px] font-ruberoid font-extrabold mb-4 md:text-[80px] md:leading-[87px]'>
 							Omniapp Dashboard

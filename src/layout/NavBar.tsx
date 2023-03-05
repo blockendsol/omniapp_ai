@@ -25,6 +25,7 @@ export default function NavBar() {
 	const { events } = useRouter();
 	const [showMobileNav, setShowNobileNav] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
+	const [showDropdown, setShowdropdown] = useState(false);
 	const { account, setAccount } = useContractHook();
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -43,6 +44,13 @@ export default function NavBar() {
 	function closeModal() {
 		setIsOpen(false);
 	}
+	function openDropdown() {
+		setShowdropdown(!showDropdown);
+	}
+
+	// function closeDropdown() {
+	// 	setIsOpen(false);
+	// }
 
 	// set mobile nav to close on any route change
 	useEffect(() => {
@@ -132,7 +140,7 @@ export default function NavBar() {
 							{account ? (
 								<button
 									className='flex flex-row items-center py-4 px-[46px] gap-[10px] border border-main rounded-lg'
-									onClick={openModal}
+									onClick={openDropdown}
 								>
 									<span className='text-white text-[16px] font-ruberoid font-semibold leading-[23px]'>
 										{shortner(account)}
@@ -153,7 +161,7 @@ export default function NavBar() {
 				</div>
 			) : null}
 
-			<Disconnect account={account} isOpen={isOpen && account.length > 0} />
+			<Disconnect account={account} isOpen={showDropdown && account.length > 0} setAccount={setAccount} />
 			<ConnectWalletButton
 				isOpen={isOpen && !account}
 				closeModal={closeModal}
@@ -163,7 +171,7 @@ export default function NavBar() {
 	);
 }
 
-const Disconnect = ({ account, isOpen }: { account: string; isOpen: boolean }) => {
+const Disconnect = ({ account, isOpen, setAccount }: { account: string; isOpen: boolean; setAccount: any }) => {
 	return (
 		<div
 			className={`absolute right-14 py-1 justify-center mt-3 w-[200px] bg-main rounded-lg items-center ${
@@ -174,7 +182,10 @@ const Disconnect = ({ account, isOpen }: { account: string; isOpen: boolean }) =
 				<span className='hover:font-bold mr-1 font-semibold'>{shortner(account)}</span>
 				<i className='ri-file-copy-line'></i>
 			</button>
-			<button className='py-1 cursor-pointer w-full flex justify-center items-center'>
+			<button
+				className='py-1 cursor-pointer w-full flex justify-center items-center'
+				onClick={() => disConnect(setAccount)}
+			>
 				{' '}
 				<span className='hover:font-bold mr-1 font-semibold'>Disconnect</span>
 				<i className='ri-logout-circle-r-line'></i>

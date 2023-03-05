@@ -10,18 +10,33 @@ declare global {
 	}
 }
 
-export const disConnect = async () => {
-	const { ethereum } = window;
-	if (ethereum) {
-		ethereum.request({
-			method: 'wallet_requestPermissions',
-			params: [
-				{
-					eth_accounts: {},
-				},
-			],
-		});
+export const disConnect = async (setAccount: React.Dispatch<React.SetStateAction<string>>) => {
+	try {
+		const { ethereum } = window;
+		if (!ethereum) {
+			toast.error('Pls Install Metamask');
+			return;
+		}
+		const accounts: any = (await ethereum.request({
+			method: 'eth_accounts',
+		})) as string[];
+		if (accounts?.length > 0) {
+			setAccount('');
+		}
+	} catch (e: any) {
+		toast.error(e.message);
 	}
+	// const { ethereum } = window;
+	// if (ethereum) {
+	// 	ethereum.request({
+	// 		method: 'wallet_requestPermissions',
+	// 		params: [
+	// 			{
+	// 				eth_accounts: {},
+	// 			},
+	// 		],
+	// 	});
+	// }
 };
 
 export const connectWallet = async (setAccount: React.Dispatch<React.SetStateAction<string>>) => {

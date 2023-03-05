@@ -23,6 +23,7 @@ export default function Tokenomics() {
 	return (
 		<section className='relative w-full h-full bg-thick'>
 			{/* <div className='absolute bg-[url("/section_svg/section-team.svg")] bg-no-repeat w-full h-full' /> */}
+			<div className='absolute bg-[url("/section_svg/mobile_tokenomics.png")] md:bg-[url("/section_svg/section-team.svg")] bg-cover  bg-no-repeat w-full h-full' />
 
 			<div className='w-full relative pt-[100px] px-[19px] md:px-[156px]'>
 				<h1 className='text-glow text-[36px] leading-[36px] font-ruberoid font-extrabold mb-[56px] md:text-[80px] md:leading-[80px]'>

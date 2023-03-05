@@ -6,7 +6,9 @@ import image_4 from '/public/card/sperial_small_2.png';
 
 export default function Features() {
 	return (
-		<section className=' w-full h-full bg-section py-[100px] px-[19px] md:py-[150px] md:px-[156px]'>
+		<section className='w-full h-full bg-section py-[100px] px-[19px] md:py-[150px] md:px-[156px]'>
+			{/* <div className='absolute bg-[url("/section_svg/mobile_tokenomics.png")] md:bg-[url("/section_svg/section-team.svg")] bg-cover md:bg-auto bg-no-repeat w-full h-full' /> */}
+
 			<div className='w-full flex flex-col items-center gap-10 md:flex-row'>
 				<div className='hidden md:block w-full md:w-[40%]' />
 				<div className='w-full md:max-w-[597px]'>
