@@ -21,40 +21,40 @@ body {
 
 @layer components {
 	.container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0, 0, 0, 0.5);
-      }
-      .modal {
-        z-index: 1;
-        min-width: 450px;
-        min-height: 250px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(0, 0, 0, 0.5);
+	}
+	.modal {
+		z-index: 1;
+		min-width: 450px;
+		min-height: 250px;
 		border-radius: 20px;
-        background: rgb(211, 209, 209);
-        display: flex;
+		background: rgb(211, 209, 209);
+		display: flex;
 		flex-direction: column;
 		align-items: center;
 		padding: 20px;
 		justify-content: center;
-        position: relative;
-        animation: animate 0.3s;
-      }
-      @keyframes animate {
-        from {
-          transform: scale(0.5);
-        }
-        to {
-          transform: scale(1);
-        }
-      }
+		position: relative;
+		animation: animate 0.3s;
 	}
+	@keyframes animate {
+		from {
+			transform: scale(0.5);
+		}
+		to {
+			transform: scale(1);
+		}
+	}
+}
 @layer base {
 	.navbar {
 		background: rgba(1, 5, 24, 0.4);
@@ -83,15 +83,15 @@ body {
 	}
 
 	.bulb-one {
-		background: linear-gradient(93.44deg, #FD72FF 10.42%, #3061B1 84.27%);
+		background: linear-gradient(93.44deg, #fd72ff 10.42%, #3061b1 84.27%);
 	}
 
 	.bulb-two {
-		background: linear-gradient(93.44deg, #010518 10.42%, #3061B1 84.27%)
+		background: linear-gradient(93.44deg, #010518 10.42%, #3061b1 84.27%);
 	}
 
 	.text-shine {
-		background: linear-gradient(90.86deg, #FFFFFF 6.35%, #3061B1 104.05%);
+		background: linear-gradient(90.86deg, #ffffff 6.35%, #3061b1 104.05%);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
@@ -130,16 +130,6 @@ body {
 	}
 }
 @layer utilities {
-	.text-glow {
-		background: linear-gradient(45deg, #026a58, #00ffd3 20%, #091552 70%, #60cf99 90%);
-		background-size: 400%;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		animation: animated_text 10s ease-in-out infinite;
-		-moz-animation: animated_text 10s ease-in-out infinite;
-		-webkit-animation: animated_text 10s ease-in-out infinite;
-	}
-
 	.table-text {
 		hover: text-white underline;
 	}
@@ -157,7 +147,7 @@ body {
 	}
 
 	tbody > tr > td {
-		@apply  font-medium text-center text-sm py-3;
+		@apply font-medium text-center text-sm py-3;
 	}
 
 	tbody > tr {
@@ -172,13 +162,13 @@ body {
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 /* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
+input[type='number'] {
+	-moz-appearance: textfield;
 }
 
 /* :root {
